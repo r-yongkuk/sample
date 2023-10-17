@@ -23,5 +23,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           build: npm run build
-          start: npm preview
+          start: npm run preview
           browser: chrome
