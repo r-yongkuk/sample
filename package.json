@@ -19,6 +19,7 @@
     "eslint-plugin-vitest": "^0.3.2",
     "jsdom": "^22.1.0",
     "nuxt": "^3.7.4",
+    "vite-plugin-eslint": "^1.8.1",
     "vitest": "^0.33.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
