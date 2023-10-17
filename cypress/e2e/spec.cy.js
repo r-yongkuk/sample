@@ -1,5 +1,7 @@
+import { describe, it, expect } from "vitest";
+
 describe("template spec", () => {
   it("passes", () => {
-    expect(false).toBeTruthy();
+    expect(wrapper.vm).toBeTruthy();
   });
 });
