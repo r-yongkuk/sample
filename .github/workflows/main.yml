@@ -32,3 +32,17 @@ jobs:
           build: npm run build
           start: npm run preview
           browser: chrome
+
+      - name: Prepare reports
+        if: always()
+        run: |
+          npm i -g mochawesome-merge
+          npm i -g mochawesome-report-generator
+          mochawesome-merge cypress/reports/mocha/*.json > ./cypress/reports/mocha/index.json
+          marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
+      - name: Cypress report
+        uses: dmitry/cypress-report-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pathname: cypress/reports/mocha/index.json
+        if: always()
