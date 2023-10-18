@@ -11,6 +11,7 @@ export default defineConfig({
     reporterEnabled: "mochawesome",
     mochawesomeReporterOptions: {
       reportDir: "cypress/reports/mocha",
+      reportFilename: "index",
       quiet: true,
       overwrite: false,
       html: false,

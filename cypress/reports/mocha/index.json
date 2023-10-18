@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2023-10-18T03:13:34.071Z",
-    "end": "2023-10-18T03:13:34.319Z",
-    "duration": 248,
+    "start": "2023-10-18T03:20:03.019Z",
+    "end": "2023-10-18T03:20:03.275Z",
+    "duration": 256,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "995e9847-4135-4a1e-a7de-49cf98dcce12",
+      "uuid": "919b7228-ec13-4542-8295-c551d46183d3",
       "title": "",
       "fullFile": "cypress/e2e/spec.cy.js",
       "file": "cypress/e2e/spec.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b95a46e8-a688-4d79-9596-473094712ee8",
+          "uuid": "53dac46f-cf67-4bf7-874e-67c8f13d4501",
           "title": "template spec",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "passes",
               "fullTitle": "template spec passes",
               "timedOut": null,
-              "duration": 218,
+              "duration": 231,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "TypeError: (0 , _vitest.expect) is not a function\n    at Context.eval (webpack://nuxt-app/./cypress/e2e/spec.cy.js:5:11)",
                 "diff": null
               },
-              "uuid": "343c2158-0df0-442d-9810-c6e3615f8f52",
-              "parentUUID": "b95a46e8-a688-4d79-9596-473094712ee8",
+              "uuid": "9aaba151-d9b0-4ee8-97f0-b17f7c85fabc",
+              "parentUUID": "53dac46f-cf67-4bf7-874e-67c8f13d4501",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "343c2158-0df0-442d-9810-c6e3615f8f52"
+            "9aaba151-d9b0-4ee8-97f0-b17f7c85fabc"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 218,
+          "duration": 231,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -87,7 +87,7 @@
     "mochawesome": {
       "options": {
         "quiet": true,
-        "reportFilename": "mochawesome",
+        "reportFilename": "index",
         "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
@@ -100,6 +100,7 @@
       "options": {
         "id": "default",
         "reportDir": "cypress/reports/mocha",
+        "reportFilename": "index",
         "quiet": true,
         "overwrite": false,
         "html": false,
