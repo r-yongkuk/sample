@@ -43,8 +43,8 @@ jobs:
           mochawesome-merge ./cypress/reports/mocha/*.json > ./cypress/reports/mocha/index.json
           marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
       - name: Cypress report
-        uses: dmitry/cypress-report-action@v1
+        uses: dmitry/cypress-report-action@1.0.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           pathname: cypress/reports/mocha/index.json
         if: always()
