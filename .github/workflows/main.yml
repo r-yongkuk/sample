@@ -7,6 +7,9 @@ permissions:
   repository-projects: read
   actions: read
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN  }}
+
 on:
   push:
     branches:
@@ -49,6 +52,6 @@ jobs:
       - name: Cypress report
         uses: dmitry/cypress-report-action@1.0.0
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ env.GITHUB_TOKEN }}
           pathname: ../cypress/reports/mocha/index.json
         if: always()
