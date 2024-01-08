@@ -4,7 +4,7 @@ import * as markdownTable from "markdown-table";
 import { deleteComment } from "@aki77/actions-replace-comment";
 import replaceComment from "@aki77/actions-replace-comment";
 
-function getExamples(results) {
+export function getExamples(results) {
   return getChildren(results, []);
 }
 
@@ -37,7 +37,7 @@ function getChildren(input, output, filepath) {
   return output;
 }
 
-function getTable(examples) {
+export function getTable(examples) {
   return markdownTable([
     ["State", "Description"],
     ...examples.map(({ state, filepath, title, message }) => [
@@ -47,7 +47,7 @@ function getTable(examples) {
   ]);
 }
 
-function getSummary(stats) {
+export function getSummary(stats) {
   return (
     `Passes: ${stats.passes},` +
     ` failures: ${stats.failures},` +
@@ -74,7 +74,7 @@ const commentGeneralOptions = () => {
   };
 };
 
-async function report(result) {
+export async function report(result) {
   const title = core.getInput("title", { required: true });
   const always = core.getInput("always", { required: true });
 
@@ -99,8 +99,3 @@ ${getTable(getExamples(result.results))}
 `,
   });
 }
-
-exports.getTable = getTable;
-exports.getExamples = getExamples;
-exports.getSummary = getSummary;
-exports.report = report;
