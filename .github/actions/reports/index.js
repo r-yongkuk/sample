@@ -12,7 +12,7 @@ async function run() {
     try {
       fs.accessSync(fullPathname, fs.constants.R_OK);
     } catch (err) {
-      core.warning(`${fullPathname}: access error!`);
+      core.warning(`${fullPathname}: access error! ${err}`);
       return;
     }
 
