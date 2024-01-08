@@ -19,5 +19,10 @@ inputs:
     required: false
     default: true
 runs:
-  using: "node20"
-  main: "index.js"
+  using: "composite"
+  steps:
+    - name: install dependencies
+      run: npm install @actions/core@1.10 @actions/github@6.0 @aki77/actions-replace-comment@0.6 markdown-table@3.0
+
+    - name: run
+      run: node index.js
