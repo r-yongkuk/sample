@@ -19,5 +19,10 @@ inputs:
     required: false
     default: true
 runs:
-  using: "node16"
+  - name: Setup Node
+    uses: actions/setup-node@v3
+    with:
+      node-version: 18
+      cache: "npm"
+
   main: "index.js"
