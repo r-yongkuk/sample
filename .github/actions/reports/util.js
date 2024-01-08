@@ -1,8 +1,8 @@
-const core = require("@actions/core");
-const github = require("@actions/github");
-const markdownTable = require("markdown-table");
-const { deleteComment } = require("@aki77/actions-replace-comment");
-const replaceComment = require("@aki77/actions-replace-comment").default;
+import core from "@actions/core";
+import github from "@actions/github";
+import markdownTable from "markdown-table";
+import { deleteComment } from "@aki77/actions-replace-comment";
+import replaceComment from "@aki77/actions-replace-comment";
 
 function getExamples(results) {
   return getChildren(results, []);
