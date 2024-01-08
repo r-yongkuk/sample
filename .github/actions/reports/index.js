@@ -1,7 +1,6 @@
 import core from "@actions/core";
 import fs from "fs";
 import path from "path";
-import cp from "child_process";
 import { report } from "./utils.js";
 
 async function run() {

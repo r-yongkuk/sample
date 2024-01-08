@@ -20,29 +20,6 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  # cypress-run:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
-
-  #     - name: Setup Node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 18
-  #         cache: "npm"
-
-  #     - name: install
-  #       run: |
-  #         npm install
-
-  #     - name: test
-  #       if: always()
-  #       uses: ./.github/actions/reports
-  #       with:
-  #         token: ${{ env.GITHUB_TOKEN }}
-  #         pathname: ./cypress/reports/mocha/index.json
-
   cypress-run:
     runs-on: ubuntu-latest
     steps:

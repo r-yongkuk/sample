@@ -54,9 +54,7 @@
             }
           ],
           "suites": [],
-          "passes": [
-            "1e718332-c831-42c4-aae9-e6947531929d"
-          ],
+          "passes": ["1e718332-c831-42c4-aae9-e6947531929d"],
           "failures": [],
           "pending": [],
           "skipped": [],
@@ -112,9 +110,7 @@
             }
           ],
           "suites": [],
-          "passes": [
-            "1e718332-c831-42c4-aae9-e6947531929d"
-          ],
+          "passes": ["1e718332-c831-42c4-aae9-e6947531929d"],
           "failures": [],
           "pending": [],
           "skipped": [],

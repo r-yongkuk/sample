@@ -38,6 +38,7 @@ function getChildren(input, output, filepath) {
 }
 
 export function getTable(examples) {
+  console.log(examples);
   return markdownTable([
     ["State", "Description"],
     ...examples.map(({ state, filepath, title, message }) => [
@@ -86,8 +87,6 @@ export async function report(result) {
     });
     return;
   }
-
-  console.log(replaceComment);
 
   await replaceComment.default({
     ...commentGeneralOptions(),
