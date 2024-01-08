@@ -50,8 +50,8 @@ jobs:
           marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
 
       - name: Cypress report
-        uses: dmitry/cypress-report-action@1.0.0
+        if: always()
+        uses: ./.github/actions/reports
         with:
           token: ${{ env.GITHUB_TOKEN }}
           pathname: ../cypress/reports/mocha/index.json
-        if: always()
