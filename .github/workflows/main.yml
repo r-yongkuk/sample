@@ -1,5 +1,15 @@
 name: Cypress Tests
 
+permissions:
+  contents: read
+  checks: read
+  pull-requests: write
+  repository-projects: read
+  actions: read
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN  }}
+
 on:
   push:
     branches:
@@ -14,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -22,13 +32,30 @@ jobs:
           node-version: 18
           cache: "npm"
 
-      - name: Checkout
-        uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v5
         with:
           build: npm run build
           start: npm run preview
           browser: chrome
+
+      - name: Prepare reports
+        if: always()
+        run: |
+          npm i -g mochawesome-merge
+          npm i -g mochawesome-report-generator
+          mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mocha/index.json
+          marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
+
+      - name: Cypress report dependencies
+        if: always()
+        uses: ./.github/actions/dependencies
+
+      - name: Cypress report
+        if: always()
+        uses: ./.github/actions/reports
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+          pathname: ./cypress/reports/mocha/index.json

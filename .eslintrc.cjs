@@ -1,4 +1,5 @@
 module.exports = {
   plugins: ["vitest"],
-  parser: "babel-eslint",
+  plugins: ["vitest"],
+  parser: "vue-eslint-parser",
 };
