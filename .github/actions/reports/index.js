@@ -1,7 +1,7 @@
 import core from "@actions/core";
 import fs from "fs";
 import path from "path";
-import { report } from "./utils";
+import { report } from "./utils.js";
 
 async function run() {
   try {
