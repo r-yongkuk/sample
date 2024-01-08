@@ -23,7 +23,7 @@ async function run() {
       return;
     }
 
-    const result = await import(fullPathname);
+    const result = await import(fullPathname, { assert: "json" });
 
     // await report(result);
   } catch (error) {
