@@ -2,7 +2,7 @@ import core from "@actions/core";
 import github from "@actions/github";
 import { markdownTable } from "markdown-table";
 import { deleteComment } from "@aki77/actions-replace-comment";
-import { default as replaceComment } from "@aki77/actions-replace-comment";
+import * as replaceComment from "@aki77/actions-replace-comment";
 
 export function getExamples(results) {
   return getChildren(results, []);
@@ -87,7 +87,7 @@ export async function report(result) {
     return;
   }
 
-  await replaceComment({
+  await replaceComment.replaceComment({
     ...commentGeneralOptions(),
     body: `${title}
 <details>
