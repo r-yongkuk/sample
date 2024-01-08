@@ -44,7 +44,7 @@ jobs:
           marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
 
       - name: Cypress report
-        uses: duynhanf/cypress-report-action@13.0.0
+        uses: duynhanf/cypress-report-action@v13
         with:
           token: ${{ secrets.GH_TOKEN }}
           pathname: ../cypress/reports/mocha/index.json
