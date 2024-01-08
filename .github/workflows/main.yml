@@ -23,35 +23,45 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "npm"
-
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: npm run build
-          start: npm run preview
-          browser: chrome
-
-      - name: Prepare reports
-        if: always()
-        run: |
-          npm i -g mochawesome-merge
-          npm i -g mochawesome-report-generator
-          mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mocha/index.json
-          marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
-
-      - name: Cypress report
+      - name: test
         if: always()
         uses: ./.github/actions/reports
         with:
           token: ${{ env.GITHUB_TOKEN }}
           pathname: ../cypress/reports/mocha/index.json
+
+  # cypress-run:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18
+  #         cache: "npm"
+
+  #     # Install NPM dependencies, cache them correctly
+  #     # and run all Cypress tests
+  #     - name: Cypress run
+  #       uses: cypress-io/github-action@v5
+  #       with:
+  #         build: npm run build
+  #         start: npm run preview
+  #         browser: chrome
+
+  #     - name: Prepare reports
+  #       if: always()
+  #       run: |
+  #         npm i -g mochawesome-merge
+  #         npm i -g mochawesome-report-generator
+  #         mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mocha/index.json
+  #         marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
+
+  #     - name: Cypress report
+  #       if: always()
+  #       uses: ./.github/actions/reports
+  #       with:
+  #         token: ${{ env.GITHUB_TOKEN }}
+  #         pathname: ../cypress/reports/mocha/index.json

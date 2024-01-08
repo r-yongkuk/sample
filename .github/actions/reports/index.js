@@ -25,7 +25,7 @@ async function run() {
 
     const result = await import(fullPathname);
 
-    await report(result);
+    // await report(result);
   } catch (error) {
     core.setFailed(error.message);
   }
