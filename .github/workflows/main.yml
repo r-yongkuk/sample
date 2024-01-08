@@ -1,8 +1,11 @@
 name: Cypress Tests
 
 permissions:
-  issues: write
+  contents: read
+  checks: read
   pull-requests: write
+  repository-projects: read
+  actions: read
 
 on:
   push:
@@ -44,7 +47,7 @@ jobs:
           marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
 
       - name: Cypress report
-        uses: duynhanf/cypress-report-action@v13
+        uses: dmitry/cypress-report-action@1.0.0
         with:
           token: ${{ secrets.GH_TOKEN }}
           pathname: ../cypress/reports/mocha/index.json
