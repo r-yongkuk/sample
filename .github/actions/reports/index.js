@@ -6,12 +6,6 @@ import { report } from "./utils.js";
 
 async function run() {
   try {
-    const ls = cp.spawn("pwd");
-
-    ls.stdout.on("data", (data) => {
-      console.log(`stdout: ${data}`);
-    });
-
     const pathname = core.getInput("pathname", { required: true });
 
     const fullPathname = path.resolve(process.env.GITHUB_WORKSPACE, pathname);
@@ -25,7 +19,7 @@ async function run() {
 
     const result = await import(fullPathname, { assert: { type: "json" } });
 
-    // await report(result);
+    await report(result);
   } catch (error) {
     core.setFailed(error.message);
   }
