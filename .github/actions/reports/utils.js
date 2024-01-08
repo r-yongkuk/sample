@@ -1,6 +1,6 @@
 import core from "@actions/core";
 import github from "@actions/github";
-import * as markdownTable from "markdown-table";
+import * as mt from "markdown-table";
 import { deleteComment } from "@aki77/actions-replace-comment";
 import replaceComment from "@aki77/actions-replace-comment";
 
@@ -38,7 +38,7 @@ function getChildren(input, output, filepath) {
 }
 
 export function getTable(examples) {
-  return markdownTable([
+  return mt.markdownTable([
     ["State", "Description"],
     ...examples.map(({ state, filepath, title, message }) => [
       state,
