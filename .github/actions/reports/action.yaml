@@ -27,4 +27,4 @@ runs:
 
     - name: run
       shell: bash
-      run: node index.js
+      run: node ./index.js
