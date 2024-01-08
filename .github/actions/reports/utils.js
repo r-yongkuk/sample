@@ -1,9 +1,8 @@
 import core from "@actions/core";
 import github from "@actions/github";
 import { markdownTable } from "markdown-table";
-import pkg from "@aki77/actions-replace-comment";
-
-const { deleteComment, replaceComment } = pkg;
+import { deleteComment } from "@aki77/actions-replace-comment";
+import { default as replaceComment } from "@aki77/actions-replace-comment";
 
 export function getExamples(results) {
   return getChildren(results, []);
