@@ -22,7 +22,9 @@ runs:
   using: "composite"
   steps:
     - name: install dependencies
+      shell: bash
       run: npm install @actions/core@1.10 @actions/github@6.0 @aki77/actions-replace-comment@0.6 markdown-table@3.0
 
     - name: run
+      shell: bash
       run: node index.js
