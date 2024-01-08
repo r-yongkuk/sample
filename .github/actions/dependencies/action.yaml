@@ -1,0 +1,10 @@
+name: "Cypress report action dependencies"
+description: "Basic report added to the pull request as a comment with summary and detailed failures table using github actions."
+icon: alert-triangle
+color: green
+runs:
+  using: "composite"
+  steps:
+    - name: install dependencies
+      run: npm install @actions/core@1.10 @actions/github@6.0 @aki77/actions-replace-comment@0.6 markdown-table@3.0
+      shell: bash

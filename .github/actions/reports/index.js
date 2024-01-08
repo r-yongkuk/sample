@@ -5,13 +5,10 @@ import { report } from "./utils.js";
 
 async function run() {
   try {
-    const [_, __, pathname, token, title, always] = process.argv;
-    console.log(process.argv);
-
-    // const pathname = core.getInput("pathname", { required: true });
-    // const token = core.getInput("token", { required: true });
-    // const title = core.getInput("title", { required: true });
-    // const always = core.getInput("always", { required: true });
+    const pathname = core.getInput("pathname", { required: true });
+    const token = core.getInput("token", { required: true });
+    const title = core.getInput("title", { required: true });
+    const always = core.getInput("always", { required: true });
 
     const fullPathname = path.resolve(process.env.GITHUB_WORKSPACE, pathname);
 

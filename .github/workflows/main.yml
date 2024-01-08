@@ -49,6 +49,10 @@ jobs:
           mochawesome-merge ./cypress/reports/mocha/*.json -o ./cypress/reports/mocha/index.json
           marge --charts=true --showPassed=false -o ./cypress/reports/mocha/ ./cypress/reports/mocha/index.json
 
+      - name: Cypress report dependencies
+        if: always()
+        uses: ./.github/actions/dependencies
+
       - name: Cypress report
         if: always()
         uses: ./.github/actions/reports
