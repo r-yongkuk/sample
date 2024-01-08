@@ -89,7 +89,7 @@ export async function report(result) {
 
   console.log(replaceComment);
 
-  await replaceComment.replaceComment({
+  await replaceComment.default({
     ...commentGeneralOptions(),
     body: `${title}
 <details>
