@@ -9,9 +9,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test": "vitest",
-    "cypress:test": "start-server-and-test start http://localhost:3000 cy:run",
-    "cypress:open": "npx cypress open",
-    "cypress:run": "npx cypress run"
+    "test:ci": "start-server-and-test 'npm run dev' http://localhost:3000 cypress:run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

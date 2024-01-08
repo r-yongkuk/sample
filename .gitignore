@@ -12,4 +12,6 @@ stats.html
 types/auto-imports.d.ts
 types/components.d.ts
 
+# cypress
 cypress/reports/mocha
+cypress/screenshots
