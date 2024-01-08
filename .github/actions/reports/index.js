@@ -1,7 +1,7 @@
-const core = require("@actions/core");
-const fs = require("fs");
-const path = require("path");
-const { report } = require("./utils");
+import core from "@actions/core";
+import fs from "fs";
+import path from "path";
+import { report } from "./utils";
 
 async function run() {
   try {
@@ -16,7 +16,7 @@ async function run() {
       return;
     }
 
-    const result = require(fullPathname);
+    const result = await import(fullPathname);
 
     await report(result);
   } catch (error) {
