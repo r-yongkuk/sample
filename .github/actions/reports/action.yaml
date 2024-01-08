@@ -27,4 +27,4 @@ runs:
 
     - name: run
       shell: bash
-      run: node ./index.js
+      run: node ./.github/actions/reports/index.js
