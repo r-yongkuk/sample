@@ -51,9 +51,7 @@ jobs:
 
       - name: Cypress report
         if: always()
-        uses: actions/javascript-action@v1.0.1
+        uses: ./.github/actions/reports
         with:
           token: ${{ env.GITHUB_TOKEN }}
           pathname: ../cypress/reports/mocha/index.json
-          script: |
-            node ./.github/actions/reports/index.js
