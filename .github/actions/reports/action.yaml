@@ -26,10 +26,10 @@ runs:
       shell: bash
 
     - name: run
-      run: node $GITHUB_ACTION_PATH/index.js
       with:
         token: ${{ inputs.token }}
         pathname: ${{ inputs.pathname }}
         title: ${{ inputs.title }}
         always: ${{ inputs.always }}
+        script: node $GITHUB_ACTION_PATH/index.js
       shell: bash
