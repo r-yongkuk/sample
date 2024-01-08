@@ -26,5 +26,5 @@ runs:
       shell: bash
 
     - name: run
-      run: $GITHUB_ACTION_PATH/index.js
-      shell: sh
+      run: node $GITHUB_ACTION_PATH/index.js
+      shell: bash
