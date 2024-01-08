@@ -26,10 +26,5 @@ runs:
       shell: bash
 
     - name: run
-      with:
-        token: ${{ inputs.token }}
-        pathname: ${{ inputs.pathname }}
-        title: ${{ inputs.title }}
-        always: ${{ inputs.always }}
-        script: node $GITHUB_ACTION_PATH/index.js
+      run: node $GITHUB_ACTION_PATH/index.js  ${{ inputs.pathname }} ${{ inputs.token }} ${{ inputs.title }} ${{ inputs.always }}
       shell: bash

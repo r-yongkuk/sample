@@ -67,20 +67,17 @@ function pullRequestId() {
 
 const commentGeneralOptions = () => {
   return {
-    token: core.getInput("token", { required: true }),
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
     issue_number: pullRequestId(),
   };
 };
 
-export async function report(result) {
-  const title = core.getInput("title", { required: true });
-  const always = core.getInput("always", { required: true });
-
+export async function report(result, { title, always, token }) {
   if (!result.stats.failures && !always) {
     await deleteComment({
       ...commentGeneralOptions(),
+      token,
       body: title,
       startsWith: true,
     });
@@ -89,6 +86,7 @@ export async function report(result) {
 
   await replaceComment.default({
     ...commentGeneralOptions(),
+    token,
     body: `${title}
 <details>
 <summary>${getSummary(result.stats)}</summary>
