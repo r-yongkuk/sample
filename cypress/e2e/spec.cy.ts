@@ -1,7 +1,5 @@
-import { expect } from "vitest";
-
 describe("template spec", () => {
   it("passes", () => {
-    expect(false).toBeTruthy();
+    cy.visit("http://localhost:3000/");
   });
 });
