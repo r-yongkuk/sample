@@ -1,6 +1,7 @@
 name: Cypress Tests
 
-permissions: write-all
+permissions:
+  issues: write
 
 on:
   push:
