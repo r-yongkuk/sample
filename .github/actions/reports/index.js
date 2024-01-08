@@ -19,7 +19,7 @@ async function run() {
 
     const result = await import(fullPathname, { assert: { type: "json" } });
 
-    console.log(result.results);
+    console.log(result);
     await report(result);
   } catch (error) {
     core.setFailed(error.message);
