@@ -8,7 +8,7 @@ export function getExamples(results) {
   return getChildren(results, []);
 }
 
-function getChildren(input, output, filepath) {
+function getChildren(input, output = [], filepath) {
   Object.values(input).forEach(({ tests, suites, file }) => {
     if (file) {
       filepath = file;
@@ -38,7 +38,6 @@ function getChildren(input, output, filepath) {
 }
 
 export function getTable(examples) {
-  console.log(examples);
   return markdownTable([
     ["State", "Description"],
     ...examples.map(({ state, filepath, title, message }) => [
