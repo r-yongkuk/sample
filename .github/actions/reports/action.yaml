@@ -27,4 +27,4 @@ runs:
 
     - name: run
       run: $GITHUB_ACTION_PATH/index.js
-      shell: bash
+      shell: sh
