@@ -1,6 +1,6 @@
 import core from "@actions/core";
 import github from "@actions/github";
-import markdownTable from "markdown-table";
+import * as markdownTable from "markdown-table";
 import { deleteComment } from "@aki77/actions-replace-comment";
 import replaceComment from "@aki77/actions-replace-comment";
 
