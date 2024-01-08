@@ -77,4 +77,4 @@ jobs:
         uses: ./.github/actions/reports
         with:
           token: ${{ env.GITHUB_TOKEN }}
-          pathname: ../cypress/reports/mocha/index.json
+          pathname: ./cypress/reports/mocha/index.json
