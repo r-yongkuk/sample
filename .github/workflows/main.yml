@@ -32,6 +32,10 @@ jobs:
           node-version: 18
           cache: "npm"
 
+      - name: install
+        run: |
+          npm install
+
       - name: test
         if: always()
         uses: ./.github/actions/reports
